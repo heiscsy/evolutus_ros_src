@@ -1,0 +1,8 @@
+prefix=/home/yuhan/catkin_ws/src/evolutus_filter/build/devel
+
+Name: evolutus_filter
+Description: Description of evolutus_filter
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/yuhan/catkin_ws/src/evolutus_filter/build/devel/lib 
+Requires: 

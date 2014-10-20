@@ -1,0 +1,24 @@
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find evolutus_gazebo)/worlds/evolutus.world"/>
+  </include>
+
+  <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model" 
+    args = "-file $(find evolutus_description)/sdf/model.sdf -sdf -z 2 -model chimp_lidars" />
+
+  <node name="linkstates2tf" pkg="linkstates2tf" type="linkstates2tf"
+    respawn="false" output="screen" args="world">
+  </node>
+
+  <node name="pc2projector_left" pkg="pc2projector" type="pc2projector"
+    output="screen" args="/robot/lidar/left/scan /robot/lidar/left/pc2 world">
+  </node>
+
+  <node name="pc2projector_right" pkg="pc2projector" type="pc2projector"
+    output="screen" args="/robot/lidar/right/scan /robot/lidar/right/pc2 world">
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find evolutus_description)/launch/evolutus.rviz"/>
+
+</launch>

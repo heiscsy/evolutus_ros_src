@@ -1,0 +1,8 @@
+prefix=/home/yuhan/catkin_ws/src/beginner_tutorials/devel
+
+Name: gazebo_msgs
+Description: Description of gazebo_msgs
+Version: 2.4.6
+Cflags: -I/home/yuhan/catkin_ws/src/beginner_tutorials/devel/include
+Libs: -L/home/yuhan/catkin_ws/src/beginner_tutorials/devel/lib 
+Requires: message_runtime std_msgs trajectory_msgs geometry_msgs sensor_msgs std_srvs message_generation

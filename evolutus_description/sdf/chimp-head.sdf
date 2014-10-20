@@ -1,0 +1,102 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+<model name="chimp_lidars">
+  <static>false</static>
+
+    <link name="support">
+      <pose>0 0 0.1 0 0 0</pose>
+      <gravity>0</gravity>
+      <kinematic>1</kinematic>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.04 0.04 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+             <size>0.04 0.04 0.2</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="rotator">
+      <pose>0 0 0.22 1.5708 0 0</pose>
+      <gravity>0</gravity>
+      <kinematic>1</kinematic>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.06</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <include>
+      <uri>model://hokuyo</uri>
+      <plugin name="laser" filename="libRayPlugin.so" />
+      <name>hokuyo_left</name>
+      <pose>0 0.06 0.22 0 0 1.5708</pose> <!-- roll pitch yaw -->
+      <gravity>0</gravity>
+    </include>
+    <include>
+      <uri>model://hokuyo</uri>
+      <name>hokuyo_right</name>
+      <pose>0 -0.06 0.22 1.5708 0 -1.5708 </pose>
+      <gravity>0</gravity>
+    </include>
+
+    <joint name="world_joint" type="revolute">
+      <child>support</child>
+      <parent>world</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="rotator_joint" type="revolute">
+      <child>rotator</child>
+      <parent>support</parent>
+      <axis> 
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="hokuyo_left_joint" type="prismatic">
+      <child>hokuyo_left::link</child>
+      <parent>rotator</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="hokuyo_right_joint" type="prismatic">
+      <child>hokuyo_right::link</child>
+      <parent>rotator</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>

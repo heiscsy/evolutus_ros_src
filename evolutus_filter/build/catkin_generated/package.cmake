@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "evolutus_filter")
+set(evolutus_filter_MAINTAINER "yuhan <yuhan@todo.todo>")
+set(evolutus_filter_DEPRECATED "")
+set(evolutus_filter_VERSION "0.0.0")
+set(evolutus_filter_BUILD_DEPENDS )
+set(evolutus_filter_RUN_DEPENDS )
+set(evolutus_filter_BUILDTOOL_DEPENDS "catkin")

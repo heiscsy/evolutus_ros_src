@@ -1,0 +1,26 @@
+<launch>
+
+    
+  <node name="linkstates2tf" pkg="linkstates2tf" type="linkstates2tf"
+    respawn="false" output="screen" args="world">
+  </node>
+
+  <node name="preprocess" pkg="preprocess" type="preprocess"
+    respawn="false" output="screen" args="/robot/lidar/left/pc2 /robot/lidar/right/pc2 /pcl/pc">
+  </node>
+
+  <node name="filter" pkg="evolutus_filter" type="filter"
+    respawn="false" output="screen" args="/pcl/pc /pcl/pc_voxalized">
+  </node>
+
+  <node name="pc2projector_left" pkg="pc2projector" type="pc2projector"
+    respawn="false" output="screen" args="/robot/lidar/left/scan /robot/lidar/left/pc2 world">
+  </node>
+
+  <node name="pc2projector_right" pkg="pc2projector" type="pc2projector"
+    respawn="false" output="screen" args="/robot/lidar/right/scan /robot/lidar/right/pc2 world">
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find evolutus_description)/launch/evolutus.rviz"/>
+
+</launch>

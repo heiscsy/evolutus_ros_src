@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: evolutus_filter
+Description: Description of evolutus_filter
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

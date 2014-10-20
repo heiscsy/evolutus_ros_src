@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/yuhan/catkin_ws/src/evolutus_filter/build/devel/setup.sh

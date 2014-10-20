@@ -1,0 +1,10 @@
+<launch>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find evolutus_gazebo)/worlds/evolutus.world"/>
+  </include>
+
+  <node name="spawn_sdf" pkg="gazebo_ros" type="spawn_model" 
+    args = "-file $(find evolutus_description)/sdf/model.sdf -sdf -z 2 -model chimp_lidars" />
+
+</launch>

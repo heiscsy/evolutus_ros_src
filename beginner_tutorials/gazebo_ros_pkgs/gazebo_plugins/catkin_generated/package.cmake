@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "gazebo_plugins")
+set(gazebo_plugins_MAINTAINER "John Hsu <hsu@osrfoundation.org>")
+set(gazebo_plugins_DEPRECATED "")
+set(gazebo_plugins_VERSION "2.4.6")
+set(gazebo_plugins_BUILD_DEPENDS "gazebo" "gazebo_msgs" "geometry_msgs" "sensor_msgs" "trajectory_msgs" "std_srvs" "roscpp" "rospy" "nodelet" "angles" "nav_msgs" "urdf" "tf" "tf2_ros" "dynamic_reconfigure" "driver_base" "rosgraph_msgs" "image_transport" "rosconsole" "message_generation" "cv_bridge" "polled_camera" "diagnostic_updater" "camera_info_manager")
+set(gazebo_plugins_RUN_DEPENDS "gazebo" "gazebo_msgs" "gazebo_ros" "geometry_msgs" "sensor_msgs" "trajectory_msgs" "std_srvs" "roscpp" "rospy" "nodelet" "angles" "nav_msgs" "urdf" "tf" "tf2_ros" "dynamic_reconfigure" "driver_base" "rosgraph_msgs" "image_transport" "rosconsole" "message_generation" "cv_bridge" "polled_camera" "camera_info_manager")
+set(gazebo_plugins_BUILDTOOL_DEPENDS "catkin")
