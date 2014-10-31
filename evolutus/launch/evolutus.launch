@@ -1,0 +1,11 @@
+<launch>
+
+
+ <node pkg="evolutus" name="integration" type="integration"/>
+ <node pkg="evolutus" name="preprocess" type="preprocess"/>
+ <node pkg="evolutus" name="cmd_parsing" type="cmd_parsing"/>
+ <node pkg="evolutus" name="database_access" type="database_access"/>
+ <node pkg="evolutus" name="strategy_generation" type="strategy_generation"/>
+ <node pkg="evolutus" name="model_comparison" type="model_comparison"/>
+ 
+ </launch>
